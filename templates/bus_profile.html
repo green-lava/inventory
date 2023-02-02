@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GMS - Garage Management System</title>
+    <link
+      rel="stylesheet"
+      href="{%static 'assets/bootstrap-5.0.2-dist/css/bootstrap.min.css' %}"
+    />
+    <link rel="stylesheet" href="{%static 'assets/css/main.css' %}" />
+    <link rel="stylesheet" href="{%static 'assets/css/login_signup.css' %}" />
+    <link rel="stylesheet" href="{%static 'assets/css/registration_first.css' %}" />
+    <link rel="stylesheet" href="{%static 'assets/css/registration_second.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="{%static 'assets/bootstrap-5.0.2-dist/js/bootstrap.bundle.js' %}"></script>
+  </head>
+  <body>
+    <header class="full_nav">
+      <div class="header">
+        <div class="">
+          <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <div class="container">
+              <a class="navbar-brand" href="index.html">
+                <img src="{%static 'assets/images/logo.png' %}" alt="logo" />
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse float-end" id="navbarScroll">
+                <div class="ms-auto">
+                  <ul
+                    class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+                    style="--bs-scroll-height: 100px"
+                  >
+                    <li class="nav-item">
+                      <a
+                        class="nav-link active nav-text"
+                        aria-current="page"
+                        href="login_signup.html"
+                      >
+                        <img src="{%static 'assets/images/icons/mdi_bell.png' %}" alt="" />
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link active nav-text"
+                        aria-current="page"
+                        href="login_signup.html"
+                      >
+                        Vendor Name
+                        <select name="" class="border-0" id=""></select>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div style="margin-top: 80px"></div>
+      </div>
+    </header>
+    <!--  -->
+    <main class="pb-4">
+      <div class="container">
+        <div class="progress_bar">
+          <div class="d-flex justify-content-between">
+            <img src="{%static 'assets/images/icons/signup_icon.png' %}" alt="" />
+            <img src="{%static 'assets/images/icons/signup_icon.png' %}" alt="" />
+            <img src="{%static 'assets/images/icons/signup_icon.png' %}" alt="" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 bg-white p-4 vendor_registration_blank">
+            <form
+              class="row g-4"
+              method="post"
+              action="#"
+            >
+            {% csrf_token %}
+              <h2>Business Details</h2>
+              <div class="col-md-4">
+                <label for="shop_name" class="form-label">Shop Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fullName"
+                  placeholder="Enter Shop Name"
+                  name = "shop_name"
+                />
+              </div>
+              {% comment %} <div class="col-md-4">
+                <label for="email" class="form-label">Shop Image</label>
+                <input type="file" class="form-control" id="email" />
+              </div> {% endcomment %}
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                <label for="business_name" class="form-label">Business Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fullName"
+                  placeholder="Enter Business Name"
+                  
+                />
+              </div>
+              <div class="col-md-4">
+                <label for="business_type" class="form-label">Type</label>
+                <select name="business_type" class="form-select" id="">
+                  <option value="">select Type</option>
+                </select>
+              </div>
+              {% comment %} <div class="col-md-4">
+                <label for="email" class="form-label">Other</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder=""
+                  id="email"
+                />
+              </div> {% endcomment %}
+              <div class="col-md-4">
+                <label for="reg_number" class="form-label"
+                  >Business Registration Number</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fullName"
+                  placeholder="Enter Business Registration"
+                  name = "reg_number"
+                />
+              </div>
+              {% comment %} <div class="col-md-4">
+                <label for="inputPassword4" class="form-label"
+                  >Upload Image</label
+                >
+                <input type="file" class="form-control" id="inputPassword4" />
+              </div> {% endcomment %}
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                <label for="gst_no" class="form-label">GST No.</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fullName"
+                  placeholder="Enter Business GST No."
+                  name = "gst_no"
+                />
+              </div>
+              {% comment %} <div class="col-md-4">
+                <label for="inputPassword4" class="form-label"
+                  >GST Certificate</label
+                >
+                <input type="file" class="form-control" id="inputPassword4" />
+              </div> {% endcomment %}
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                <label for="address" class="form-label">Address Line</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fullName"
+                  placeholder="Enter Address Line"
+                  name = "address"
+                />
+              </div>
+              <div class="col-md-4">
+                <label for="state" class="form-label">State</label>
+                <select name="state" class="form-select" id="">
+                  <option value="">select state</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label for="city" class="form-label">City</label>
+                <select name="city" class="form-select" id="">
+                  <option value="">select city</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label for="zip" class="form-label">Zip Code</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fullName"
+                  placeholder="Enter Zip Code"
+                  name = "zip"
+                />
+              </div>
+              {% comment %} <div class="col-md-4">
+                <label for="inputPassword4" class="form-label"
+                  >Shop Address Proof</label
+                >
+                <input type="file" class="form-control" id="inputPassword4" />
+              </div>
+              <div class="col-6">
+                <div class="row g-4">
+                  <div class="col-md-8">
+                    <label for="fullName" class="form-label"
+                      >Specialization</label
+                    >
+                    <select name="" class="form-select" id="">
+                      <option value="">select state</option>
+                    </select>
+                  </div>
+                  <div class="col-md-12 p-3">
+                    <div class="border rounded-3 p-3">
+                      <button class="Steering btn btn-light m-1">
+                        Steering<i class="fa fa-close ps-1"></i>
+                      </button>
+                      <button class="Wheels btn btn-light m-1">
+                        Wheels<i class="fa fa-close ps-1"></i>
+                      </button>
+                      <button class="Wheels btn btn-light m-1">
+                        Wind Shield<i class="fa fa-close ps-1"></i>
+                      </button>
+                      <button class="Wheels btn btn-light m-1">
+                        Shockers<i class="fa fa-close ps-1"></i>
+                      </button>
+                      <button class="Wheels btn btn-light m-1">
+                        Tail Lights<i class="fa fa-close ps-1"></i>
+                      </button>
+                      <button class="Wheels btn btn-light m-1">
+                        Oil<i class="fa fa-close ps-1"></i>
+                      </button>
+                      <button class="Wheels btn btn-light m-1">
+                        Engine<i class="fa fa-close ps-1"></i>
+                      </button>
+                      <button class="Wheels btn btn-light m-1">
+                        Brakes<i class="fa fa-close ps-1"></i>
+                      </button>
+                      <button class="Wheels btn btn-light m-1">
+                        Headlights<i class="fa fa-close ps-1"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <p class="">Didn’t find what you looking for in list.</p>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="fullName"
+                      placeholder="Type here"
+                    />
+                  </div>
+                  <div class="col-md-4 mt-auto">
+                    <a href="registration_third.html">
+                      <button type="" class="btn btn-primary">Add More</button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 border-start border-2 ps-5">
+                <div class="row g-4">
+                  <div class="col-md-8">
+                    <label for="fullName" class="form-label">Vendor of</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="fullName"
+                      placeholder="Enter Company Name"
+                    />
+                  </div>
+                  <div class="col-md-4">
+                    <label for="inputPassword4" class="form-label"
+                      >Business Card</label
+                    >
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="inputPassword4"
+                    />
+                  </div>
+                  <div class="col-md-8">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="fullName"
+                      placeholder="Enter Company Name"
+                    />
+                  </div>
+                  <div class="col-12">
+                    <a href="registration_third.html">
+                      <button type="" class="btn btn-primary">Add More</button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <label class="form-check-label">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="remember"
+                  />
+                  I HEREBY CERTIFY THAT THIS INFORMATION IS CORRECT, and
+                  document provided by are relevant and original, any
+                  discrepancy if found in verification can cancel my account
+                  creation. Also i have read and understood all the terms &
+                  conditions and privacy policy.</label
+                >
+              </div> {% endcomment %}
+              <div class="col-12 d-flex justify-content-center">
+                <button type="submit" class="btn btn-success">
+                  Save & Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--  -->
+    <footer>
+      <div class="footer-terms-rights" style="background-color: #d9d9d9">
+        <div class="container">
+          <nav class="navbar d-flex">
+            <!-- <span class="navbar-text text-dark"
+              >© 2023 Autoz365 | All Rights Reserved</span> -->
+            <div class="ms-auto">
+              <a href="" class="me-2 text-decoration-none">
+                <span class="navbar-text text-dark"
+                  >Powered by <span class="autoz_footer_text">Autoz</span
+                  ><span class="a365_footer_text">365</span></span
+                >
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+.vendor_banner {
+    background-color: black;
+    padding-top: 41px;
+    padding-bottom: 93px;
+  }
+  .vendor_banner_text {
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .vendor_banner_text h2 {
+    font-size: 35px;
+    font-weight: 600;
+  }
+  .vendor_banner_text h1 {
+    font-size: 69px;
+    font-weight: 700;
+  }
+  .vendor_banner_text p {
+    font-weight: 500;
+  }
+  .why_to_register {
+    padding-top: 40px;
+    background-color: #efefef;
+    padding-bottom: 52px;
+  }
+  
+  .why_to_register div h1 {
+    font-weight: 600;
+  }
+  .why_to_register div p {
+    padding: 13px;
+  }
+  .vendor_signup_link {
+    background: #ffffff;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    padding: 32px 86px;
+    width: 1107px;
+    position: relative;
+    top: -110px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .register-shop-btn {
+    border-right: 1px solid #9c9c9c;
+    height: 53px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .register-shop-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .register-shop-login button {
+    color: white;
+    padding-left: 33px;
+    padding-right: 33px;
+    background-color: #e03111;
+  }
+  /* business-solution */
+  .business-solution {
+    height: 365px;
+    padding: 70px 0;
+  }
+  .business-solution h1 {
+    font-weight: 600;
+  }
+  .business-solution li {
+    font-weight: 600;
+  }
+  /* .business_img {
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    height: 130px;
+  } */
+  .red-circle {
+    padding: 15px;
+    height: 32px;
+    width: 12px;
+    background-color: #e03111;
+    border-radius: 100%;
+  }
+  
+  /* start_now */
+  .start_now {
+    background-color: #efefef;
+    padding: 94px 87px;
+  }
+  .start_now .start-now-gradiant {
+    color: white;
+    padding: 58px 37px 37px 37px;
+    background: linear-gradient(
+      90.05deg,
+      #1d1d1b 0.05%,
+      rgba(29, 29, 27, 0.5) 28.13%,
+      rgba(255, 255, 255, 0.5) 62.46%,
+      #ffffff 99.97%
+    );
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
+  .start-now-gradiant div button {
+    background-color: #e03111;
+    color: white;
+    padding: 13px 49px;
+  }
+  /*  */
+  .flow-section {
+    padding: 15px 0px;
+  }
+  .process-flow {
+    padding-left: 5px;
+    padding-top: 25px;
+    padding-bottom: 20px;
+    border-left: 5px solid #263238;
+    border-radius: 1px;
+  }
+  .steps-flow {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+  }
+  .steps-flow img {
+    position: relative;
+    left: -50px;
+  }
+  /*  */
+  .help-section-vendor {
+    background-color: #efefef;
+    padding-top: 57px;
+    padding-bottom: 67px;
+  }
+  .helping_steps h2 {
+      font-weight: 600;
+    }
+  .helping_steps ul li h5 {
+    font-weight: 600;
+  }
+  

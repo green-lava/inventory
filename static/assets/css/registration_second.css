@@ -1,0 +1,11 @@
+.progress_bar {
+  padding: 100px 240px 5px 240px;
+}
+.progress_bar div {
+  border-top: solid 5px black;
+  padding: 5px 35px;
+}
+.progress_bar div img {
+  position: relative;
+  top: -60px;
+}

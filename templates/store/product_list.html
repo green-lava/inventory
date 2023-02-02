@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GMS - Garage Management System</title>
+  <link rel="stylesheet" href="{%static 'assets/bootstrap-5.0.2-dist/css/bootstrap.min.css' %}" />
+  <link rel="stylesheet" href="{%static 'assets/css/main.css' %}" />
+  <link rel="stylesheet" href="{%static 'assets/css/vendorcrm.css' %}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <script src="{%static 'assets/bootstrap-5.0.2-dist/js/bootstrap.bundle.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+
+<body>
+  <div class="sidebar active">
+    <div class="logo_content">
+      <div class="logo">
+        <div class="logo_name">
+          <img src="{%static 'assets/images/logo_white.svg' %}" height="50" alt="logo" />
+        </div>
+      </div>
+      <img class="bx bx-menu" src="{%static 'assets/images/nav_menu.svg' %}" height="30" id="btn" />
+    </div>
+    <ul class="nav_list">
+      <li class="search_bar">
+        <i class="bx bx-search"></i>
+        <input type="text" placeholder="search heare...." />
+        <!-- <span class="tooltip">Search</span> -->
+      </li>
+      <li>
+        <a href="/store/dashboard">
+          <img src="{%static 'assets/images/icons/ic_round-home.svg' %}" height="30" alt="" />
+          <span class="links_name">Dashboard</span>
+        </a>
+        <!-- <span class="tooltip">Dashboard</span> -->
+      </li>
+      <li>
+        <a href="#">
+          <img src="{%static 'assets/images/icons/Frame (2).svg' %}" height="30" alt="" />
+          <span class="links_name">Shop</span>
+        </a>
+        <!-- <span class="tooltip">Shop</span> -->
+      </li>
+      <li>
+        <a href="#">f
+          <img src="{%static 'assets/images/icons/Frame (1).svg' %}" height="30" alt="" />
+          <span class="links_name">Orders</span>
+        </a>
+        <!-- <span class="tooltip">Orders</span> -->
+      </li>
+      <li>
+        <a href="#">
+          <img src="{%static 'assets/images/icons/Frame (3).svg' %}" height="30" alt="" />
+          <span class="links_name">Leads</span>
+        </a>
+        <!-- <span class="tooltip">Leads</span> -->
+      </li>
+      <li>
+        <a href="#" class="selected">
+          <img src="{%static 'assets/images/icons/Frame (4).svg' %}" height="30" alt="" class="imgselected" />
+          <span class="links_name">Inventory</span>
+        </a>
+        <!-- <span class="tooltip">Inventory</span> -->
+      </li>
+      <li>
+        <a href="#">
+          <img src="{%static 'assets/images/icons/Frame (5).svg' %}" height="30" alt="" />
+          <span class="links_name">Account</span>
+        </a>
+        <!-- <span class="tooltip">Account</span> -->
+      </li>
+      <li>
+        <a href="#">
+          <img src="{%static 'assets/images/icons/Frame (6).svg' %}" height="30" alt="" />
+          <span class="links_name">Report</span>
+        </a>
+        <!-- <span class="tooltip">Report</span> -->
+      </li>
+      <li>
+        <a href="#">
+          <img src="{%static 'assets/images/icons/Frame (7).svg' %}" height="30" alt="" />
+          <span class="links_name">Option</span>
+        </a>
+        <!-- <span class="tooltip">Option</span> -->
+      </li>
+    </ul>
+  </div>
+  <div class="home_content">
+    <header class="full_nav">
+      <div class="dashboard header">
+        <div class="">
+          <nav class="navbar bg-white p-3">
+            <a href="/store/dashboard" class="text-decoration-none">
+              <img src="{%static 'assets/images/icons/ic_round-home_red.svg' %}" class="p-2" height="40" alt="logo" />
+              <span class="text-dark nav_heading">Dashboard</span>
+            </a>
+            <div class="">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active nav-text text-decoration-none" aria-current="page" href="#" id="profilebtn">
+                    <span class="text-dark nav_heading"> {{request.user.first_name}} </span>
+                    <select name="" class="border-0" id=""></select>
+                  </a>
+                  <div class="profile_popup">
+                    <div class="profile_name">
+                      <img src="{%static 'assets/images/Ellipse 21.svg' %}" height="80" alt="" />
+                      <div>
+                        <p class="p-0 m-0 username">{{request.user.first_name}}</p>
+                        <span class="useremail">{{request.user.email}}</span>
+                      </div>
+                    </div>
+                    <div class="profile_actions">
+                      <a href="#" class="text-decoration-none">
+                        <button class="btn editbtn">Edit Profile</button>
+                      </a>
+                      <a href="{% url 'logout' %}" class="text-decoration-none">
+                        <button class="btn lgoutbtn">Log Out</button>
+                      </a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <section class="content-section">
+      <div class="d-flex">
+        <div class="topnav activtab navprductlist me-1 p-2 rounded-top" id="prductlist">
+            <a href="/store/product-list" class=" text-decoration-none text-dark">
+            Product List
+            </a>
+        </div>
+        <div class="topnav navaddproduct me-1 p-2 rounded-top" id="addproduct">
+          <a href="/store/create-product" class=" text-decoration-none text-dark">
+              Add Product
+          </a>
+        </div>
+        
+      </div>
+      <div class="productlistpg bg-white p-4 mb-3">
+        <div class="row">
+          <div class="col-6">
+            <input type="search" name="search" id="search" placeholder="search here...."
+              class="p-1 w-75 border-dark rounded-3" />
+          </div>
+        </div>
+        <div class="pt-3">
+          <table class="table">
+            <thead class="table-light">
+              <tr class = "text-center">
+                <th scope="col">Product ID</th>
+                <th scope="col">Part No.</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Manufacturer</th>
+                <th scope="col">Available</th>
+                <th scope="col">Price</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                            {% if product %}
+                            {% for product in product %}
+                            <tr class = "text-center">
+                                <td class="serial">{{ forloop.counter }}</td>
+                                <td>{{ product.part_no }}</td>
+                                <td>{{ product.name }}</td>
+                                <td>{{ product.manufacturer }}</td>
+                                <td>{{ product.quantity }}</td>
+                                <td>{{ product.price }}</td>
+                                <td>  
+                                    <a href="/store/edit-product/{{ product.id }}" class="text-decoration-none text-dark"><span class="glyphicon glyphicon-pencil" >Edit</span></a> 
+                                    <a href="/store/delete-product/{{ product.id }}" class="text-decoration-none text-dark">Delete</a>
+                                </td>
+                                      
+                            </tr>
+                            {% endfor %}
+                            {% else %}
+                                <tr><td>No Product Data</td></tr>
+                            {% endif %}
+                        </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum enim
+        laboriosam consectetur molestiae porro id. Neque, nobis hic
+        reprehenderit aspernatur harum corrupti ratione nihil nulla cumque
+        commodi quidem autem culpa optio rerum molestiae eos dicta suscipit ex
+        beatae earum itaque veritatis soluta! Error cum eum, sequi sit quas
+        itaque laudantium.
+      </p>
+    </section>
+    <footer>
+      <div class="footer-terms-rights fixed-bottom" style="background-color: #d9d9d9">
+        <div class="container">
+          <nav class="navbar d-flex">
+            <!-- <span class="navbar-text text-dark"
+                >© 2023 Autoz365 | All Rights Reserved</span> -->
+            <div class="ms-auto">
+              <!-- <a href="" class="me-2 text-decoration-none">
+                  <span class="navbar-text text-dark">T&C</span>
+                </a>
+                <a href="" class="me-2 text-decoration-none">
+                  <span class="navbar-text text-dark">Sitemap</span>
+                </a> -->
+              <a href="" class="me-2 text-decoration-none">
+                <span class="navbar-text text-dark">Powered by <span class="autoz_footer_text">Autoz</span><span
+                    class="a365_footer_text">365</span></span>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="{% static 'assets/js/inventory.js'%}"></script>
+</body>
+
+</html>

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GMS - Garage Management System</title>
+    <link
+      rel="stylesheet"
+      href="{%static 'assets/bootstrap-5.0.2-dist/css/bootstrap.min.css' %}"
+    />
+    <link rel="stylesheet" href="{%static 'assets/css/main.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <script src="{%static 'assets/bootstrap-5.0.2-dist/js/bootstrap.bundle.js' %}"></script>
+  </head>
+  <body>
+    <header class="full_nav">
+      <div class="header">
+        <div class="">
+          <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <div class="container">
+              <a class="navbar-brand" href="index.html">
+                <img src="{%static 'assets/images/logo.png' %}" alt="logo" />
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse float-end" id="navbarScroll">
+                <div class="ms-auto">
+                  <ul
+                    class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+                    style="--bs-scroll-height: 100px"
+                  >
+                    <li class="nav-item">
+                      <a
+                        class="nav-link active nav-text"
+                        aria-current="page"
+                        href="aboutus/"
+                        >About Us</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link active nav-text"
+                        aria-current="page"
+                        href="contactus.html"
+                        >Contact Us</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link active nav-text"
+                        aria-current="page"
+                        href="users/login/"
+                      >
+                        <img src="{%static 'assets/images/icons/login.png' %}" alt="" />
+                        Log In / Sign Up</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div style="margin-top: 80px"></div>
+      </div>
+    </header>
+    <!-- banner start -->
+    <div class="container-fluid banner d-flex pt-2">
+      <div class="banner-text d-flex justify-content-center align-items-center">
+        <div class="text-white">
+          <h1>List your Business for <span class=""> FREE </span></h1>
+          <a href="login_signup.html">
+            <button type="button" class="btn btn-light">Get Started Now</button>
+          </a>
+        </div>
+      </div>
+      <div class="banner-img">
+        <img src="{%static 'assets/images/bannner-img.png' %}" alt="" />
+      </div>
+    </div>
+    <!-- banner end -->
+    <!-- sub-banner -->
+    <div class="sub-banner container">
+      <div class="d-flex justify-content-around align-items-center h-100">
+        <div class="">
+          <img src="{%static 'assets/images/Group 8795.png' %}" alt="" />
+          <p>Increase your revenue</p>
+        </div>
+        <div>
+          <img src="{%static 'assets/images/Group 8796.png' %}" alt="" />
+          <p>Reach out to customers</p>
+        </div>
+        <div>
+          <img src="{%static 'assets/images/Group 8797.png' %}" alt="" />
+          <p>Get best spare parts</p>
+        </div>
+        <div>
+          <img src="{%static 'assets/images/Group 8798.png' %}" alt="" />
+          <p>Increase your visibility</p>
+        </div>
+      </div>
+    </div>
+    <!-- sub-banner -->
+    <!-- main-section start -->
+    <div class="container-fluid main-section">
+      <div
+        class="container login-signup-lending d-flex justify-content-between"
+      >
+        <a
+          href="garage_signup.html"
+          class="text-decoration-none section-redirection"
+        >
+          <div class="d-flex garage-redirection">
+            <img src="{%static 'assets/images/garage_img.png' %}" alt="" />
+            <div>
+              <h5>Register as <span>GARAGE</span></h5>
+              <p>
+                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                amet sint.
+              </p>
+            </div>
+          </div>
+        </a>
+        <a
+          href="users/signup-vendor/"
+          class="text-decoration-none section-redirection"
+        >
+          <div class="d-flex garage-redirection">
+            <img src="{%static 'assets/images/vendor_img.png' %}" alt="" />
+            <div>
+              <h5>Register as <span>VENDOR</span></h5>
+              <p>
+                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                amet sint.
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- help-section start -->
+      <div class="container bg-white help-section">
+        <h2>How we can help you grow?</h2>
+        <div class="row help-section-category">
+          <div class="col-lg-6 col-md-12 d-flex">
+            <img src="{%static 'assets/images/icons/help1.png' %}" alt="" />
+            <div>
+              <h4 class="p-0 m-0">Track Business</h4>
+              <p class="p-0">Keep eye on your business.</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 d-flex">
+            <img src="{%static 'assets/images/icons/help2.png' %}" alt="" />
+            <div>
+              <h4 class="p-0 m-0">Manage Expense</h4>
+              <p class="p-0">Keep eye on your business.</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 d-flex">
+            <img src="{%static 'assets/images/icons/help3.png' %}" alt="" />
+            <div>
+              <h4 class="p-0 m-0">Claim Settlement</h4>
+              <p class="p-0">Settle your customers claim hassle free.</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 d-flex">
+            <img src="{%static 'assets/images/icons/help4.png' %}" alt="" />
+            <div>
+              <h4 class="p-0 m-0">Sell Products / Services</h4>
+              <p class="p-0">Rate your customers, so others can trust on.</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 d-flex">
+            <img src="{%static 'assets/images/icons/help5.png' %}" alt="" />
+            <div>
+              <h4 class="p-0 m-0">Manage inventory</h4>
+              <p class="p-0">Manage products with ease.</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 d-flex">
+            <img src="{%static 'assets/images/icons/help6.png' %}" alt="" />
+            <div>
+              <h4 class="p-0 m-0">Get Leads</h4>
+              <p class="p-0">Manage products with ease.</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 d-flex">
+            <img src="{%static 'assets/images/icons/help7.png' %}" alt="" />
+            <div>
+              <h4 class="p-0 m-0">Manage Job Card</h4>
+              <p class="p-0">Understand the flaws, loss, profits on a click.</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 d-flex">
+            <img src="{%static 'assets/images/icons/help8.png' %}" alt="" />
+            <div>
+              <h4 class="p-0 m-0">Get Reports</h4>
+              <p class="p-0">Understand the flaws, loss, profits on a click.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- help-section end -->
+    </div>
+    <!-- main-section end -->
+    <!-- thought section start -->
+    <div class="container-fluid bg-white thoaght-section">
+      <div class="container">
+        <div
+          class="d-flex justify-content-between align-items-center vendor-get-started"
+        >
+          <h3>Become a vendor on Autoz365 today</h3>
+          <button type="button" class="btn">Get Started Now</button>
+        </div>
+        <div class="row pt-5">
+          <div class="col-lg-8 thoaght">
+            <img src="{%static 'assets/images/icons/commoa.png' %}" alt="" />
+            <p class="pt-4 ps-5">
+              If we did all the things we were capable of, we would astound
+              ourselves.
+            </p>
+            <h4 class="ps-5">Thomas Edison, Inventor</h4>
+          </div>
+          <div class="col-lg-4">
+            <img src="{%static 'assets//images/thoaght-img.png' %}" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- thought section end -->
+    <div class="container-fluid faq-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 faq-list">
+            <div class="bg-white">
+              <h2>FAQs</h2>
+              <div class="row m-0 p-0">
+                <div
+                  class="col-lg-12 d-flex justify-content-between align-items-center m-0 p-0 faq-list-item mb-2"
+                >
+                  <p class="m-0">
+                    Amet minim mollit non deserunt ullamco est sit aliqua dolor
+                    do amet sint.
+                  </p>
+                  <img
+                    src="{%static 'assets/images/icons/black-arrow.png' %}"
+                    class="ms-auto"
+                    height="40"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="col-lg-12 d-flex justify-content-between align-items-center m-0 p-0 faq-list-item mb-2"
+                >
+                  <p class="m-0">
+                    Amet minim mollit non deserunt ullamco est sit aliqua dolor
+                    do amet sint.
+                  </p>
+                  <img
+                    src="{%static 'assets/images/icons/black-arrow.png' %}"
+                    class="ms-auto"
+                    height="40"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="col-lg-12 d-flex justify-content-between align-items-center m-0 p-0 faq-list-item mb-2"
+                >
+                  <p class="m-0">
+                    Amet minim mollit non deserunt ullamco est sit aliqua dolor
+                    do amet sint.
+                  </p>
+                  <img
+                    src="{%static 'assets/images/icons/black-arrow.png' %}"
+                    class="ms-auto"
+                    height="40"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="col-lg-12 d-flex justify-content-between align-items-center m-0 p-0 faq-list-item mb-2"
+                >
+                  <p class="m-0">
+                    Amet minim mollit non deserunt ullamco est sit aliqua dolor
+                    do amet sint.
+                  </p>
+                  <img
+                    src="{%static 'assets/images/icons/black-arrow.png' %}"
+                    class="ms-auto"
+                    height="40"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="col-lg-12 d-flex justify-content-between align-items-center m-0 p-0 faq-list-item mb-2"
+                >
+                  <p class="m-0">
+                    Amet minim mollit non deserunt ullamco est sit aliqua dolor
+                    do amet sint.
+                  </p>
+                  <img
+                    src="{%static 'assets/images/icons/black-arrow.png' %}"
+                    class="ms-auto"
+                    height="40"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="col-lg-12 d-flex justify-content-between align-items-center m-0 p-0 faq-list-item mb-2"
+                >
+                  <p class="m-0">
+                    Amet minim mollit non deserunt ullamco est sit aliqua dolor
+                    do amet sint.
+                  </p>
+                  <img
+                    src="{%static 'assets/images/icons/black-arrow.png' %}"
+                    class="ms-auto"
+                    height="40"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="col-lg-12 d-flex justify-content-between align-items-center m-0 p-0 faq-list-item mb-2"
+                >
+                  <p class="m-0">
+                    Amet minim mollit non deserunt ullamco est sit aliqua dolor
+                    do amet sint.
+                  </p>
+                  <img
+                    src="{%static 'assets/images/icons/black-arrow.png' %}"
+                    class="ms-auto"
+                    height="40"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 garage-rating bg-white">
+            <div class="rating-box">
+              <img src="{%static 'assets/images/user_rating_img.png' %}" alt="" />
+              <h5 class="rating-name">PAWAN TANEJA</h5>
+              <h5 class="">PAWAN MOTORS, GURUGRAM</h5>
+              <p class="m-0 p-4 pt-0">
+                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                amet sint. Velit officia consequat duis enim velit mollit.
+                Exercitation veniam consequat sunt nostrud amet.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-head">
+        <div class="container d-flex justify-content-between pt-5 pb-2">
+          <a class="navbar-brand ms-1" href="index.html">
+            <img src="{%static 'assets/images/footerlogo.png' %}" alt="logo" width="180" />
+          </a>
+          <div class="">
+            <form action="" method="post">
+              <div class="mb-3 mt-3">
+                <label for="email" class="form-label text-light"
+                  >Subscribe Us</label
+                >
+                <div class="input-group mb-3">
+                  <input
+                    id="email"
+                    type="text"
+                    name="email"
+                    class="form-control"
+                    aria-label="Default"
+                    aria-describedby="inputGroup-sizing-default"
+                    required
+                  />
+                  <div class="input-group-prepend">
+                    <button type="button" class="btn subscribe-btn">
+                      <img src="{%static 'assets/images/icons/right_arrow.png' %}" alt="" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="container text-white pb-5">
+          <div class="row">
+            <div class="col-3">
+              <h6>
+                <span class="footer-subheading">About Us</span>
+              </h6>
+              <p class="text-white-50">
+                We’re providing quality services to our customers, with the best
+                possible service and repair for all automotive needs.
+              </p>
+              <div class="mt-5">
+                <h6>
+                  <span class="footer-subheading">Our Socials</span>
+                </h6>
+
+                <div class="d-flex mt-3">
+                  <a href="" class="text-decoration-none me-2">
+                    <img
+                      src="{%static 'assets/images/icons/carbon_logo-facebook.png' %}"
+                      alt=""
+                    />
+                  </a>
+                  <a href="" class="text-decoration-none me-2">
+                    <img
+                      src="{%static 'assets/images/icons/ph_instagram-logo-fill.png' %}"
+                      alt=""
+                    />
+                  </a>
+                  <a href="" class="text-decoration-none me-2">
+                    <img src="{%static 'assets/images/icons/mdi_twitter.png' %}" alt="" />
+                  </a>
+                  <a href="" class="text-decoration-none me-2">
+                    <img src="{%static 'assets/images/icons/mdi_linkedin.png' %}" alt="" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <h6>
+                <span class="footer-subheading">Categories</span>
+              </h6>
+              <ul class="list-unstyled text-white-50 footer-ul">
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">AMC Packages</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">GMS</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">Services</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">DIY</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">A Vendor</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <h6>
+                <span class="footer-subheading">Our Services</span>
+              </h6>
+              <ul class="list-unstyled text-white-50 footer-ul">
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">Scheduled Service</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">AC Service</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">Cleaning & Detailing</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="me-2 text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">Light & Fitments</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">Denting & Paintings</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">Batteries</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">Tyers</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">Windshields & Glass</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <h6>
+                <span class="footer-subheading">Blogs</span>
+              </h6>
+              <ul class="list-unstyled text-white-50 footer-ul">
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <div class="footer-links">
+                      Scheduled Service
+                      <p class="blog-text p-0 m-0">
+                        Nulla Lorem mollit cupidatat ....
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <div class="footer-links">
+                      Scheduled Service
+                      <p class="blog-text p-0 m-0">
+                        Nulla Lorem mollit cupidatat ....
+                      </p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-3">
+              <div class="d-flex">
+                <img
+                  src="{%static 'assets/images/icons/address_ping.png' %}"
+                  alt=""
+                  height="20"
+                  width="20"
+                />
+                <div class="ps-2">
+                  <h6>
+                    <span class="footer-subheading">Address</span>
+                  </h6>
+                  <p class="text-white-50">
+                    1003-4-5, Tower-1, DLF Corporate Greens, Sector 74A,
+                    Gurugram, Haryana 122018
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex">
+                <img
+                  src="{%static 'assets/images/icons/ion_call.png' %}"
+                  alt=""
+                  height="20"
+                  width="20"
+                />
+                <div class="ps-2">
+                  <h6>
+                    <span class="">Contact</span>
+                  </h6>
+                  <p class="text-white-50">+91 xxxx xxxxxx</p>
+                  <p class="text-white-50">+91 xxxx xxxxxx</p>
+                  <p class="text-white-50">+91 xxxx xxxxxx</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-terms-rights">
+        <div class="container">
+          <nav class="navbar d-flex">
+            <span class="navbar-text text-white-50"
+              >© 2023 Autoz365 | All Rights Reserved</span
+            >
+            <div class="ms-auto">
+              <a href="" class="me-2 text-decoration-none">
+                <span class="navbar-text text-white-50">T&C</span>
+              </a>
+              <a href="" class="me-2 text-decoration-none">
+                <span class="navbar-text text-white-50">Sitemap</span>
+              </a>
+              <a href="" class="me-2 text-decoration-none">
+                <span class="navbar-text text-white-50">Privacy Policy</span>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

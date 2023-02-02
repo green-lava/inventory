@@ -1,0 +1,188 @@
+body {
+  background-color: #efefef;
+}
+
+section {
+  font-family: "Montserrat", sans-serif;
+}
+
+section > .signup_bg > .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reg_form {
+  width: 416px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  background: #ffffff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.reg_form h3 {
+  width: 86px;
+  height: 20px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 99.7%;
+  color: #000000;
+}
+
+.reg_form .owner_name {
+  padding-top: 15px;
+}
+
+.reg_form .owner_name input {
+  /* padding: 10px 6px; */
+  /* gap: 10px; */
+  width: 350px;
+  /* height: 35px;
+  color: #9c9c9c;
+  background: #ffffff;
+  border: 1px solid #9c9c9c;
+  border-radius: 5px; */
+}
+
+.reg_form .g_name {
+  padding-top: 15px;
+}
+
+.reg_form .g_name input {
+  /* padding: 10px 6px;
+  gap: 10px; */
+  width: 350px;
+
+  /* background: #ffffff; */
+  /* border: 1px solid #9c9c9c;
+  border-radius: 5px; */
+}
+
+.reg_form .contact_field {
+  width: 350px;
+  height: 35px;
+}
+
+.reg_form .contact_label {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.contact_field span {
+  padding-right: 5px;
+  /* color: #9c9c9c; */
+  padding: 4px;
+  background: #ffffff;
+  /* border: 1px solid #9c9c9c;
+  border-radius: 5px; */
+}
+
+.reg_form .contact_field input {
+  /* padding: 10px 6px;
+  gap: 10px; */
+  width: 200px;
+  /* height: 35px;
+  color: #9c9c9c; */
+  border-left: 0;
+  padding-left: 3px;
+  /* background: #ffffff;
+  border-top: 1px solid #9c9c9c;
+  border-bottom: 1px solid #9c9c9c;
+  border-right: 1px solid #9c9c9c;
+  border-radius: 5px; */
+}
+
+.reg_form label {
+  color: #000000;
+  width: 119px;
+  height: 16px;
+  font-style: normal;
+  font-weight: 590;
+  font-size: 16px;
+  line-height: 99.7%;
+}
+
+.reg_form .otp_field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 350px;
+  padding-top: 20px;
+}
+
+.reg_form .otp_field input {
+  /* padding: 10px 6px;
+  gap: 10px; */
+  width: 204px;
+  /* height: 35px; */
+  /* color: #9c9c9c; */
+  /* background: #ffffff;
+  border: 1px solid #9c9c9c;
+  border-radius: 5px; */
+}
+
+.reg_form .otp_field button {
+  padding: 1px 20px;
+  width: 129px;
+  height: 35px;
+  border: 0;
+  color: #ffffff;
+
+  background: #4263eb;
+  border-radius: 5px;
+}
+
+.reg_form .captcha_field {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 350px;
+  padding-top: 20px;
+}
+
+.reg_form .captcha_field label {
+  width: 46px;
+}
+
+.reg_form .captcha_field input {
+  /* padding: 10px 6px; */
+  width: 204px;
+  /* height: 35px; */
+  /* color: #9c9c9c; */
+  /* background: #ffffff;
+  border: 1px solid #9c9c9c;
+  border-radius: 5px; */
+}
+
+.reg_form .captcha_field button {
+  background-color: inherit;
+  border: 0;
+  width: 100px;
+}
+
+.reg_form .reg_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+}
+
+.reg_form .reg_button button {
+  padding: 1px 20px;
+  width: 250px;
+  height: 40px;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.333333px;
+  color: #ffffff;
+
+  background: #03b45f;
+  border: 0;
+  border-radius: 5px;
+}

@@ -1,0 +1,234 @@
+<form
+class="row g-4"
+method="post"
+action="#"
+>
+{% csrf_token %}
+<h2>Business Details</h2>
+<div class="col-md-4">
+  <label for="shop_name" class="form-label">Shop Name</label>
+  <input
+    type="text"
+    class="form-control"
+    id="fullName"
+    placeholder="Enter Shop Name"
+    name = "shop_name"
+  />
+</div>
+{% comment %} <div class="col-md-4">
+  <label for="email" class="form-label">Shop Image</label>
+  <input type="file" class="form-control" id="email" />
+</div> {% endcomment %}
+<div class="col-md-4"></div>
+<div class="col-md-4">
+  <label for="business_name" class="form-label">Business Name</label>
+  <input
+    type="text"
+    class="form-control"
+    id="fullName"
+    placeholder="Enter Business Name"
+    
+  />
+</div>
+<div class="col-md-4">
+  <label for="business_type" class="form-label">Type</label>
+  <select name="business_type" class="form-select" id="">
+    <option value="">select Type</option>
+  </select>
+</div>
+{% comment %} <div class="col-md-4">
+  <label for="email" class="form-label">Other</label>
+  <input
+    type="text"
+    class="form-control"
+    placeholder=""
+    id="email"
+  />
+</div> {% endcomment %}
+<div class="col-md-4">
+  <label for="reg_number" class="form-label"
+    >Business Registration Number</label
+  >
+  <input
+    type="text"
+    class="form-control"
+    id="fullName"
+    placeholder="Enter Business Registration"
+    name = "reg_number"
+  />
+</div>
+{% comment %} <div class="col-md-4">
+  <label for="inputPassword4" class="form-label"
+    >Upload Image</label
+  >
+  <input type="file" class="form-control" id="inputPassword4" />
+</div> {% endcomment %}
+<div class="col-md-4"></div>
+<div class="col-md-4">
+  <label for="gst_no" class="form-label">GST No.</label>
+  <input
+    type="text"
+    class="form-control"
+    id="fullName"
+    placeholder="Enter Business GST No."
+    name = "gst_no"
+  />
+</div>
+{% comment %} <div class="col-md-4">
+  <label for="inputPassword4" class="form-label"
+    >GST Certificate</label
+  >
+  <input type="file" class="form-control" id="inputPassword4" />
+</div> {% endcomment %}
+<div class="col-md-4"></div>
+<div class="col-md-4">
+  <label for="address" class="form-label">Address Line</label>
+  <input
+    type="text"
+    class="form-control"
+    id="fullName"
+    placeholder="Enter Address Line"
+    name = "address"
+  />
+</div>
+<div class="col-md-4">
+  <label for="state" class="form-label">State</label>
+  <select name="state" class="form-select" id="">
+    <option value="">select state</option>
+  </select>
+</div>
+<div class="col-md-4">
+  <label for="city" class="form-label">City</label>
+  <select name="city" class="form-select" id="">
+    <option value="">select city</option>
+  </select>
+</div>
+<div class="col-md-4">
+  <label for="zip" class="form-label">Zip Code</label>
+  <input
+    type="text"
+    class="form-control"
+    id="fullName"
+    placeholder="Enter Zip Code"
+    name = "zip"
+  />
+</div>
+{% comment %} <div class="col-md-4">
+  <label for="inputPassword4" class="form-label"
+    >Shop Address Proof</label
+  >
+  <input type="file" class="form-control" id="inputPassword4" />
+</div>
+<div class="col-6">
+  <div class="row g-4">
+    <div class="col-md-8">
+      <label for="fullName" class="form-label"
+        >Specialization</label
+      >
+      <select name="" class="form-select" id="">
+        <option value="">select state</option>
+      </select>
+    </div>
+    <div class="col-md-12 p-3">
+      <div class="border rounded-3 p-3">
+        <button class="Steering btn btn-light m-1">
+          Steering<i class="fa fa-close ps-1"></i>
+        </button>
+        <button class="Wheels btn btn-light m-1">
+          Wheels<i class="fa fa-close ps-1"></i>
+        </button>
+        <button class="Wheels btn btn-light m-1">
+          Wind Shield<i class="fa fa-close ps-1"></i>
+        </button>
+        <button class="Wheels btn btn-light m-1">
+          Shockers<i class="fa fa-close ps-1"></i>
+        </button>
+        <button class="Wheels btn btn-light m-1">
+          Tail Lights<i class="fa fa-close ps-1"></i>
+        </button>
+        <button class="Wheels btn btn-light m-1">
+          Oil<i class="fa fa-close ps-1"></i>
+        </button>
+        <button class="Wheels btn btn-light m-1">
+          Engine<i class="fa fa-close ps-1"></i>
+        </button>
+        <button class="Wheels btn btn-light m-1">
+          Brakes<i class="fa fa-close ps-1"></i>
+        </button>
+        <button class="Wheels btn btn-light m-1">
+          Headlights<i class="fa fa-close ps-1"></i>
+        </button>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <p class="">Didn’t find what you looking for in list.</p>
+      <input
+        type="text"
+        class="form-control"
+        id="fullName"
+        placeholder="Type here"
+      />
+    </div>
+    <div class="col-md-4 mt-auto">
+      <a href="registration_third.html">
+        <button type="" class="btn btn-primary">Add More</button>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="col-6 border-start border-2 ps-5">
+  <div class="row g-4">
+    <div class="col-md-8">
+      <label for="fullName" class="form-label">Vendor of</label>
+      <input
+        type="text"
+        class="form-control"
+        id="fullName"
+        placeholder="Enter Company Name"
+      />
+    </div>
+    <div class="col-md-4">
+      <label for="inputPassword4" class="form-label"
+        >Business Card</label
+      >
+      <input
+        type="file"
+        class="form-control"
+        id="inputPassword4"
+      />
+    </div>
+    <div class="col-md-8">
+      <input
+        type="text"
+        class="form-control"
+        id="fullName"
+        placeholder="Enter Company Name"
+      />
+    </div>
+    <div class="col-12">
+      <a href="registration_third.html">
+        <button type="" class="btn btn-primary">Add More</button>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="col-md-12">
+  <label class="form-check-label">
+    <input
+      class="form-check-input"
+      type="checkbox"
+      name="remember"
+    />
+    I HEREBY CERTIFY THAT THIS INFORMATION IS CORRECT, and
+    document provided by are relevant and original, any
+    discrepancy if found in verification can cancel my account
+    creation. Also i have read and understood all the terms &
+    conditions and privacy policy.</label
+  >
+</div> {% endcomment %}
+<div class="col-12 d-flex justify-content-center">
+  <button type="submit" class="btn btn-success">
+    Save & Submit
+  </button>
+</div>
+</form>

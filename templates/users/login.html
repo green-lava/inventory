@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GMS - Garage Management System</title>
+    <link
+      rel="stylesheet"
+      href="{%static 'assets/bootstrap-5.0.2-dist/css/bootstrap.min.css' %}"
+    />
+    <link rel="stylesheet" href="{%static 'assets/css/main.css' %}" />
+    <link rel="stylesheet" href="{%static 'assets/css/login_signup.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <script src="{%static 'assets/bootstrap-5.0.2-dist/js/bootstrap.bundle.js' %}"></script>
+  </head>
+  <body>
+    <header class="full_nav">
+      <div class="header">
+        <div class="">
+          <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <div class="container">
+              <a class="navbar-brand" href="/">
+                <img src="{%static 'assets/images/logo.png' %}" alt="logo" />
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse float-end" id="navbarScroll">
+                <div class="ms-auto">
+                  <ul
+                    class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+                    style="--bs-scroll-height: 100px"
+                  >
+                    <li class="nav-item">
+                      <a
+                        class="nav-link active nav-text"
+                        aria-current="page"
+                        href="aboutus.html"
+                        >About Us</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link active nav-text"
+                        aria-current="page"
+                        href="contactus.html"
+                        >Contact Us</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link active nav-text"
+                        aria-current="page"
+                        href="#"
+                      >
+                        <img src="{%static 'assets/images/icons/login.png' %}" alt="" />
+                        Log In / Sign Up</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div style="margin-top: 80px"></div>
+      </div>
+    </header>
+    <main class="login_home">
+      <div
+        class="login_main d-flex justify-content-between align-content-center"
+      >
+        <div class="login_form">
+          <h5>Log In</h5>
+          <form method = 'POST'>
+            {%csrf_token%}
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input
+                type="text"
+                class="form-control contact_input text-lowercase "
+                id="contactnumber"
+                name = "username"
+              />
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control contact_input"
+                  id="contactnumber"
+                  name = "password"
+                />
+              </div>
+            {% comment %} <div class="mb-3">
+              <label for="otp" class="form-label">Enter OTP</label>
+              <div
+                class="d-flex align-content-center justify-content-between otp_filds"
+              >
+                <div>
+                  <div
+                    class="d-flex align-content-center justify-content-around otp_fields_input"
+                  >
+                    <input
+                      type="password"
+                      class="form-control opt_input"
+                      id="otp"
+                    />
+                    <input
+                      type="password"
+                      class="form-control opt_input"
+                      id="otp"
+                    />
+                    <input
+                      type="password"
+                      class="form-control opt_input"
+                      id="otp"
+                    />
+                    <input
+                      type="password"
+                      class="form-control opt_input"
+                      id="otp"
+                    />
+                    <input
+                      type="password"
+                      class="form-control opt_input"
+                      id="otp"
+                    />
+                    <input
+                      type="password"
+                      class="form-control opt_input"
+                      id="otp"
+                    />
+                  </div>
+                  <div class="mt-2">
+                    <p>Didn’t received OTP yet?</p>
+                  </div>
+                </div>
+                <div>
+                  <button type="submit" class="btn btn-primary">Get OTP</button>
+                  <div class="mt-2">
+                    <p>
+                      <a href="" class="text-decoration-none"> </a>
+                      Resend OTP
+                    </p>
+                    <p class="text-primary m-0 p-0">00:30 Sec</p>
+                  </div>
+                </div>
+              </div>
+            </div> {% endcomment %}
+            <div class="mb-3">
+              <button type="submit" class="btn btn-success btn-block w-100">
+                Log In
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="sign_up_option">
+          <div class="container login-signup-page">
+            <a
+              href="garage_signup.html"
+              class="text-decoration-none section-redirection"
+            >
+              <div class="d-flex garage-redirection signup_option">
+                <img
+                  src="{%static 'assets/images/garage_img.png' %}"
+                  class="signup_img"
+                  alt=""
+                />
+                <div>
+                  <h5>Register as <span>GARAGE</span></h5>
+                  <p>
+                    Amet minim mollit non deserunt ullamco est sit aliqua dolor
+                    do amet sint.
+                  </p>
+                </div>
+              </div>
+            </a>
+            <div class="p-2"></div>
+            <a
+              href="/users/signup-vendor/"
+              class="text-decoration-none section-redirection"
+            >
+              <div class="d-flex garage-redirection signup_option">
+                <img
+                  src="{%static 'assets/images/vendor_img.png' %}"
+                  class="signup_img"
+                  alt=""
+                />
+                <div>
+                  <h5>Register as <span>VENDOR</span></h5>
+                  <p>
+                    Amet minim mollit non deserunt ullamco est sit aliqua dolor
+                    do amet sint.
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-head">
+        <div class="container d-flex justify-content-between pt-5 pb-2">
+          <a class="navbar-brand ms-1" href="/">
+            <img src="{%static 'assets/images/footerlogo.png' %}" alt="logo" width="180" />
+          </a>
+          <div class="">
+            <form action="" method="post">
+              <div class="mb-3 mt-3">
+                <label for="email" class="form-label text-light"
+                  >Subscribe Us</label
+                >
+                <div class="input-group mb-3">
+                  <input
+                    id="email"
+                    type="text"
+                    name="email"
+                    class="form-control"
+                    aria-label="Default"
+                    aria-describedby="inputGroup-sizing-default"
+                    required
+                  />
+                  <div class="input-group-prepend">
+                    <button type="button" class="btn subscribe-btn">
+                      <img src="{%static 'assets/images/icons/right_arrow.png' %}" alt="" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="container text-white pb-5">
+          <div class="row">
+            <div class="col-3">
+              <h6>
+                <span class="footer-subheading">About Us</span>
+              </h6>
+              <p class="text-white-50">
+                We’re providing quality services to our customers, with the best
+                possible service and repair for all automotive needs.
+              </p>
+              <div class="mt-5">
+                <h6>
+                  <span class="footer-subheading">Our Socials</span>
+                </h6>
+
+                <div class="d-flex mt-3">
+                  <a href="" class="text-decoration-none me-2">
+                    <img
+                      src="{%static 'assets/images/icons/carbon_logo-facebook.png' %}"
+                      alt=""
+                    />
+                  </a>
+                  <a href="" class="text-decoration-none me-2">
+                    <img
+                      src="{%static 'assets/images/icons/ph_instagram-logo-fill.png' %}"
+                      alt=""
+                    />
+                  </a>
+                  <a href="" class="text-decoration-none me-2">
+                    <img src="{%static 'assets/images/icons/mdi_twitter.png' %}" alt="" />
+                  </a>
+                  <a href="" class="text-decoration-none me-2">
+                    <img src="{%static 'assets/images/icons/mdi_linkedin.png' %}" alt="" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <h6>
+                <span class="footer-subheading">Categories</span>
+              </h6>
+              <ul class="list-unstyled text-white-50 footer-ul">
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">AMC Packages</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">GMS</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">Services</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">DIY</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">A Vendor</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <h6>
+                <span class="footer-subheading">Our Services</span>
+              </h6>
+              <ul class="list-unstyled text-white-50 footer-ul">
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">Scheduled Service</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">AC Service</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">Cleaning & Detailing</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="me-2 text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">Light & Fitments</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">Denting & Paintings</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">Batteries</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">Tyers</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <span class="footer-links m-0">Windshields & Glass</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <h6>
+                <span class="footer-subheading">Blogs</span>
+              </h6>
+              <ul class="list-unstyled text-white-50 footer-ul">
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <div class="footer-links">
+                      Scheduled Service
+                      <p class="blog-text p-0 m-0">
+                        Nulla Lorem mollit cupidatat ....
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="text-white-50 text-decoration-none">
+                    <div class="footer-links">
+                      Scheduled Service
+                      <p class="blog-text p-0 m-0">
+                        Nulla Lorem mollit cupidatat ....
+                      </p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-3">
+              <div class="d-flex">
+                <img
+                  src="{%static 'assets/images/icons/address_ping.png' %}"
+                  alt=""
+                  height="20"
+                  width="20"
+                />
+                <div class="ps-2">
+                  <h6>
+                    <span class="footer-subheading">Address</span>
+                  </h6>
+                  <p class="text-white-50">
+                    1003-4-5, Tower-1, DLF Corporate Greens, Sector 74A,
+                    Gurugram, Haryana 122018
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex">
+                <img
+                  src="{%static 'assets/images/icons/ion_call.png' %}"
+                  alt=""
+                  height="20"
+                  width="20"
+                />
+                <div class="ps-2">
+                  <h6>
+                    <span class="">Contact</span>
+                  </h6>
+                  <p class="text-white-50">+91 xxxx xxxxxx</p>
+                  <p class="text-white-50">+91 xxxx xxxxxx</p>
+                  <p class="text-white-50">+91 xxxx xxxxxx</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-terms-rights">
+        <div class="container">
+          <nav class="navbar d-flex">
+            <span class="navbar-text text-white-50"
+              >© 2023 Autoz365 | All Rights Reserved</span
+            >
+            <div class="ms-auto">
+              <a href="" class="me-2 text-decoration-none">
+                <span class="navbar-text text-white-50">T&C</span>
+              </a>
+              <a href="" class="me-2 text-decoration-none">
+                <span class="navbar-text text-white-50">Sitemap</span>
+              </a>
+              <a href="" class="me-2 text-decoration-none">
+                <span class="navbar-text text-white-50">Privacy Policy</span>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

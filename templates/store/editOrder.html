@@ -1,0 +1,118 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Add Order{% endblock title %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <div class="breadcrumbs-inner">
+        <div class="row m-0">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Order</a></li>
+                            <li class="active">Add</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock breadcrumbs %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <strong class="card-title">Add Order</strong>
+            </div>
+            <div class="card-body">
+                <!-- Credit Card -->
+                <div id="pay-invoice">
+                    <div class="card-body">
+                        <form action="/store/update-order/{{order.id}}" method="post" novalidate="novalidate">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="garage" class="control-label mb-1">garage</label>
+                                <input type="text" class="form-control" id="name" name="garage"
+                                value="{{order.garage}}">
+
+                            
+                            </div>
+                            <div class="form-group">
+                                <label for="product_id" class="control-label mb-1">Product</label>
+                                <select name="product_id" id="product">
+                                    {% for product in product %}
+                                    
+                                    <option value="{{product.id}}">{{product.name}}</option>
+                                    
+                                    {% endfor %}
+                                </select>
+                                
+                            </div>
+                            <div class="form-group">
+                                <label for="quantity" class="control-label mb-1">Quantity</label>
+                                <input type="number" class="form-control" id="name" name="quantity"
+                                value = "{{order.quantity}}">
+                                
+                            </div>
+                            <div class="form-group">
+                                <label for="amount" class="control-label mb-1">Amount</label>
+                                <input type="number" class="form-control" id="name" name="amount"
+                                value="{{order.amount}}">
+                               
+                            </div>
+                            <div class="form-group">
+                                <label for="garage_cont" class="control-label mb-1">garage_cont</label>
+                                <input type="number" class="form-control" id="name" name="garage_cont"
+                                value="{{order.garage_cont}}">
+
+                            </div>
+                            <div class="form-group">
+                                <label for="state" class="control-label mb-1">State</label>
+                                <input type="text" class="form-control" id="state" name="state"
+                                value="{{order.state}}">
+
+                            </div>
+                            <div class="form-group">
+                                <label for="city" class="control-label mb-1">City</label>
+                                <input type="text" class="form-control" id="city" name="city"
+                                value="{{order.city}}">
+
+                            </div>
+                            <div class="form-group">
+                                <label for="address" class="control-label mb-1">Address</label>
+                                <input type="text" class="form-control" id="name" name="address"
+                                value="{{order.address}}">
+ 
+                               
+                            </div>
+                            {% comment %} <div class="form-group">
+                                <label for="drop" class="control-label mb-1">Category</label>
+                                {{ form.drop }}
+                            </div> {% endcomment %}
+                            <div>
+                                <button id="payment-button" type="submit" class="btn btn-lg btn-success btn-block">
+                                    <span id="payment-button-amount">Save</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div> <!-- .card -->
+
+    </div><!--/.col-->
+</div>
+{% endblock content %}

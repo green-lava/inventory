@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GMS - Garage Management System</title>
+    <link rel="stylesheet" href="{%static 'assets/bootstrap-5.0.2-dist/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{%static 'assets/css/main.css' %}" />
+    <link rel="stylesheet" href="{%static 'assets/css/login_signup.css' %}" />
+    <link rel="stylesheet" href="{%static 'assets/css/registration_first.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet" />
+    <script src="{%static 'assets/bootstrap-5.0.2-dist/js/bootstrap.bundle.js' %}"></script>
+</head>
+
+<body>
+    <header class="full_nav">
+        <div class="header">
+            <div class="">
+                <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+                    <div class="container">
+                        <a class="navbar-brand" href="/">
+                            <img src="{%static 'assets/images/logo.png' %}" alt="logo" />
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse float-end" id="navbarScroll">
+                            <div class="ms-auto">
+                                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+                                    style="--bs-scroll-height: 100px">
+                                    <li class="nav-item">
+                                        <a class="nav-link active nav-text" aria-current="page"
+                                            href="login_signup.html">
+                                            <img src="{%static 'assets/images/icons/mdi_bell.png' %}" alt="" />
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active nav-text" aria-current="page"
+                                            href="login_signup.html">
+                                            Vendor Name
+                                            <select name="" class="border-0" id=""></select>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div style="margin-top: 80px"></div>
+        </div>
+    </header>
+    <!--  -->
+    <main>
+        <div class="container">
+            <div class="row pt-5">
+                <div class="col-lg-5">
+                    <div class="login_form">
+                        <h5>Complete Profile</h5>
+                        <form method="POST">
+                            {%csrf_token%}
+                            {% comment %} {{form.non_field_errors.as_text}} {% endcomment %}
+                            {% if form.errors%}
+                            {{form.errors}}
+                            {% endif%}
+                            
+                        </br>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control contact_input" id="contactnumber"
+                                    placeholder="Enter Username" name="username" />
+
+                            </div>
+                        
+
+
+                            <div class="mb-3">
+                                <label for="password1" class="form-label">Create Password</label>
+                                <input type="password" class="form-control contact_input" id="contactnumber"
+                                    placeholder="Create Password" name="password1" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="password2" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control contact_input" id="contactnumber"
+                                    placeholder="Confirm Password" name="password2" />
+                            </div>
+                            <div class="mb-3">
+                                <button type="" class="form-control contact_input btn btn-success btn-block">
+                                    Save & Proceed
+                                </button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-7 ps-4">
+                    <div class="bg-white vendor_registration_blank h-100"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--  -->
+    <footer>
+        <div class="footer-terms-rights fixed-bottom" style="background-color: #d9d9d9">
+            <div class="container">
+                <nav class="navbar d-flex">
+                    <!-- <span class="navbar-text text-dark"
+              >© 2023 Autoz365 | All Rights Reserved</span> -->
+                    <div class="ms-auto">
+                        <!-- <a href="" class="me-2 text-decoration-none">
+                <span class="navbar-text text-dark">T&C</span>
+              </a>
+              <a href="" class="me-2 text-decoration-none">
+                <span class="navbar-text text-dark">Sitemap</span>
+              </a> -->
+                        <a href="" class="me-2 text-decoration-none">
+                            <span class="navbar-text text-dark">Powered by <span
+                                    class="autoz_footer_text">Autoz</span><span
+                                    class="a365_footer_text">365</span></span>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
