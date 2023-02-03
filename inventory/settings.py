@@ -84,8 +84,12 @@ WSGI_APPLICATION = 'inventory.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': 'inventory.cp7upvh63eo9.ap-south-1.rds.amazonaws.com',
+        'PORT': '5432',
+        'NAME': 'autoz',
+        'USER': 'inventory',
+        'PASSWORD': 'Autoz123Inventory',
     }
 }
 
