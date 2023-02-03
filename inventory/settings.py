@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'inventory.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': 'inventory.cp7upvh63eo9.ap-south-1.rds.amazonaws.com',
+        'HOST': 'inventory1.cp7upvh63eo9.ap-south-1.rds.amazonaws.com',
         'PORT': '5432',
         'NAME': 'inventory1',
         'USER': 'postgres',
