@@ -1,7 +1,7 @@
 from django.urls import path
 
 from .views import login_page, logout_page, signup_vendor,signup_garage
-from .views import  profile, bus_profile, edit_profile, update_profile, edit_bus_profile
+from .views import  profile, bus_profile, edit_profile, update_profile, edit_bus_profile,update_bus_profile, registered
 
 urlpatterns = [
     path('login/', login_page, name='login'),
@@ -12,6 +12,8 @@ urlpatterns = [
     path('edit_bus_profile/<str:username>', edit_bus_profile, name='edit_bus_profile'),
     path('update_profile/<int:id>', update_profile, name = "update_profile"),
     path('profile/<str:username>', profile, name= 'profile'),
+    path('update_bus_profile/<int:id>', update_bus_profile, name='update_bus_profile'),
+    path('registered/<str:username>', registered, name = 'registered'),
     # path('inventory/' inventory)
     # path('profile/<int:id>', edit_profile, name='profile_edit'),
     # path('update-profile/<int:id>', update_profile, name='profile'),

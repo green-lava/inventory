@@ -96,6 +96,7 @@
               class="row g-4"
               method="post"
               action="#"
+              enctype="multipart/form-data"
             >
             {% csrf_token %}
               <h2>Business Details</h2>
@@ -109,10 +110,10 @@
                   name = "shop_name"
                 />
               </div>
-              {% comment %} <div class="col-md-4">
-                <label for="email" class="form-label">Shop Image</label>
-                <input type="file" class="form-control" id="email" />
-              </div> {% endcomment %}
+             <div class="col-md-4">
+                <label for="shop_image" class="form-label">Shop Image</label>
+                <input type="file" class="form-control" id="email" name = 'shop_image'/>
+              </div>
               <div class="col-md-4"></div>
               <div class="col-md-4">
                 <label for="business_name" class="form-label">Business Name</label>
@@ -121,6 +122,7 @@
                   class="form-control"
                   id="fullName"
                   placeholder="Enter Business Name"
+                  name = "business_name"
                   
                 />
               </div>
@@ -151,12 +153,12 @@
                   name = "reg_number"
                 />
               </div>
-              {% comment %} <div class="col-md-4">
-                <label for="inputPassword4" class="form-label"
-                  >Upload Image</label
+             <div class="col-md-4">
+                <label for="inc_cert" class="form-label"
+                  >Upload Inc Certificate</label
                 >
-                <input type="file" class="form-control" id="inputPassword4" />
-              </div> {% endcomment %}
+                <input type="file" class="form-control" id="inputPassword4"name = 'inc_cert'/>
+              </div>
               <div class="col-md-4"></div>
               <div class="col-md-4">
                 <label for="gst_no" class="form-label">GST No.</label>
@@ -168,12 +170,12 @@
                   name = "gst_no"
                 />
               </div>
-              {% comment %} <div class="col-md-4">
+             <div class="col-md-4">
                 <label for="inputPassword4" class="form-label"
                   >GST Certificate</label
                 >
-                <input type="file" class="form-control" id="inputPassword4" />
-              </div> {% endcomment %}
+                <input type="file" class="form-control" id="inputPassword4" name='gst_cert' />
+              </div>
               <div class="col-md-4"></div>
               <div class="col-md-4">
                 <label for="address" class="form-label">Address Line</label>
@@ -207,12 +209,13 @@
                   name = "zip"
                 />
               </div>
-              {% comment %} <div class="col-md-4">
+             <div class="col-md-4">
                 <label for="inputPassword4" class="form-label"
                   >Shop Address Proof</label
                 >
-                <input type="file" class="form-control" id="inputPassword4" />
+                <input type="file" class="form-control" id="inputPassword4" name='shop_add_prof' />
               </div>
+              {% comment %} 
               <div class="col-6">
                 <div class="row g-4">
                   <div class="col-md-8">
@@ -270,6 +273,7 @@
                   </div>
                 </div>
               </div>
+              {% endcomment %}
               <div class="col-6 border-start border-2 ps-5">
                 <div class="row g-4">
                   <div class="col-md-8">
@@ -279,6 +283,7 @@
                       class="form-control"
                       id="fullName"
                       placeholder="Enter Company Name"
+                      name = "vendor_of"
                     />
                   </div>
                   <div class="col-md-4">
@@ -289,24 +294,25 @@
                       type="file"
                       class="form-control"
                       id="inputPassword4"
+                      name = 'bus_card'
                     />
                   </div>
-                  <div class="col-md-8">
+                  {% comment %} <div class="col-md-8">
                     <input
                       type="text"
                       class="form-control"
                       id="fullName"
                       placeholder="Enter Company Name"
                     />
-                  </div>
-                  <div class="col-12">
+                  </div> {% endcomment %}
+                  {% comment %} <div class="col-12">
                     <a href="registration_third.html">
                       <button type="" class="btn btn-primary">Add More</button>
                     </a>
-                  </div>
+                  </div> {% endcomment %}
                 </div>
               </div>
-              <div class="col-md-12">
+              {% comment %} <div class="col-md-12">
                 <label class="form-check-label">
                   <input
                     class="form-check-input"

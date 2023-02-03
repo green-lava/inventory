@@ -18,7 +18,7 @@ def login_page(request):
             password = forms.cleaned_data['password']
             user = authenticate(username=username, password=password)
             is_prof = User.objects.get(username = username)
-            if user and is_prof.is_profile == True:
+            if user and is_prof.is_verified == True:
                 login(request, user)
                 return redirect('dashboard')
     context = {'form': forms}
@@ -85,7 +85,7 @@ def profile(request, username):
     
     if request.method == 'POST':
         
-        form = ProfileForm(request.POST)
+        form = ProfileForm(request.POST, request.FILES)
         if form.is_valid():
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
@@ -113,14 +113,14 @@ def bus_profile(request,username):
     
     if request.method == 'POST':
         
-        form = Bus_profileForm(request.POST)
+        form = Bus_profileForm(request.POST, request.FILES)
         if form.is_valid:
             instance = form.save(commit=False)
             instance.user_id = user_data.id
             instance.save()
-            User.objects.filter(username = username).update(is_profile = True)            
+                        
             
-            return redirect('login')
+            return redirect('registered', username = username)
     context = {
         
         'user' : user_data,
@@ -130,6 +130,21 @@ def bus_profile(request,username):
     }
  
     return render(request, 'bus_profile.html', context)
+
+def registered(request, username):
+    user_dt = User.objects.get(username=username)
+    prof_dt = Profile.objects.get(user_id = user_dt.id)
+    bus_prof_dt = Bus_profile.objects.get(user_id = user_dt.id)
+    
+    context = {
+        'user_dt' : user_dt,
+        'profile' : prof_dt,
+        'bus_prof' : bus_prof_dt
+    }
+    if user_dt.is_verified == False:
+        return render(request, 'registered.html', context)
+    else:
+        return render(request, 'verified.html', context)
 
 @login_required(login_url='login')
 def edit_profile(request, username):
@@ -141,6 +156,7 @@ def edit_profile(request, username):
     bus_dt = Bus_profile.objects.get(user_id = user_id)
     print(prof_dt.name)
     context = {
+        
         'profile':prof_dt,
         'bus_prof' : bus_dt
     }
@@ -180,6 +196,23 @@ def edit_bus_profile(request, username):
     }
     
     return render(request, 'edit_bus_profile.html', context)
+
+@login_required
+def update_bus_profile(request,id):
+    mydata = Bus_profile.objects.get(user_id = id)
+    # print(mydata.price)
+    forms = Bus_profileForm()
+    if request.method == 'POST':
+        forms = Bus_profileForm(request.POST, instance=mydata)
+        if forms.is_valid():
+            instance = forms.save(commit=False)
+            instance.user_id = id
+            instance.save()
+        return redirect('dashboard')
+    context = {
+        'form': forms
+    }
+    return render(request, 'edit_bus_profile.html', context)    
 
 def inventory(request):
     

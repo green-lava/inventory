@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <div class="sidebar">
+    <div class="sidebar active">
         <div class="logo_content">
             <div class="logo">
                 <div class="logo_name">
@@ -35,7 +35,7 @@
                 <!-- <span class="tooltip">Search</span> -->
             </li>
             <li>
-                <a href="vendorcrm.html">
+                <a href="/store/dashboard">
                     <img src="{% static 'assets/images/icons/ic_round-home.svg'%}" height="30" alt="" />
                     <span class="links_name">Dashboard</span>
                 </a>
@@ -63,7 +63,7 @@
                 <!-- <span class="tooltip">Leads</span> -->
             </li>
             <li>
-                <a href="inventry.html" class="selected">
+                <a href="inventry.html" >
                     <img src="{% static 'assets/images/icons/Frame (4).svg'%}" height="30" alt="" class="imgselected" />
                     <span class="links_name">Inventory</span>
                 </a>
@@ -178,7 +178,7 @@
                                 <div class="col-md-4">
                                     <label for="shop_name" class="form-label">Shop Name</label>
                                     <input type="text" class="form-control" id="fullName" placeholder="Enter Shop Name"
-                                        name="shop_name" value = "{{bus_prof.shop_name}}" />
+                                        name="shop_name" value = "{{bus_prof.shop_name}}" readonly />
                                 </div>
                                 {% comment %} <div class="col-md-4">
                                     <label for="email" class="form-label">Shop Image</label>
@@ -188,13 +188,14 @@
                                 <div class="col-md-4">
                                     <label for="business_name" class="form-label">Business Name</label>
                                     <input type="text" class="form-control" id="fullName"
-                                        placeholder="Enter Business Name" value = {{bus_prof.business_name}} />
+                                        placeholder="Enter Business Name" value = {{bus_prof.business_name}} 
+                                        readonly/>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="business_type" class="form-label">Type</label>
-                                    <select name="business_type" class="form-select" id="">
-                                        <option value="">select Type</option>
-                                    </select>
+                                    <input type="text" class="form-control" id="fullName"
+                                        placeholder="Enter Business Name" value = {{bus_prof.business_type}} 
+                                        readonly/>
                                 </div>
                                 {% comment %} <div class="col-md-4">
                                     <label for="email" class="form-label">Other</label>
@@ -202,8 +203,10 @@
                                 </div> {% endcomment %}
                                 <div class="col-md-4">
                                     <label for="reg_number" class="form-label">Business Registration Number</label>
-                                    <input type="text" class="form-control" id="fullName"
-                                        placeholder="Enter Business Registration" name="reg_number" />
+                                    
+                                        <input type="text" class="form-control" id="fullName"
+                                        placeholder="Enter Business Name" value = {{bus_prof.business_name}} 
+                                        readonly/>
                                 </div>
                                 {% comment %} <div class="col-md-4">
                                     <label for="inputPassword4" class="form-label">Upload Image</label>
@@ -212,8 +215,10 @@
                                 <div class="col-md-4"></div>
                                 <div class="col-md-4">
                                     <label for="gst_no" class="form-label">GST No.</label>
-                                    <input type="text" class="form-control" id="fullName"
-                                        placeholder="Enter Business GST No." name="gst_no" />
+                            
+                                        <input type="text" class="form-control" id="fullName"
+                                        placeholder="Enter Business Name" value = {{bus_prof.gst_no}} 
+                                        readonly/>
                                 </div>
                                 {% comment %} <div class="col-md-4">
                                     <label for="inputPassword4" class="form-label">GST Certificate</label>
@@ -223,24 +228,26 @@
                                 <div class="col-md-4">
                                     <label for="address" class="form-label">Address Line</label>
                                     <input type="text" class="form-control" id="fullName"
-                                        placeholder="Enter Address Line" name="address" />
+                                        placeholder="Enter Business Name" value = {{bus_prof.address}} 
+                                        readonly/>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="state" class="form-label">State</label>
-                                    <select name="state" class="form-select" id="">
-                                        <option value="">select state</option>
-                                    </select>
+                                    <input type="text" class="form-control" id="fullName"
+                                        placeholder="Enter Business Name" value = {{bus_prof.state}} 
+                                        readonly/>
+                                    
                                 </div>
                                 <div class="col-md-4">
                                     <label for="city" class="form-label">City</label>
-                                    <select name="city" class="form-select" id="">
-                                        <option value="">select city</option>
-                                    </select>
+                                    <input type="text" class="form-control" id="fullName"
+                                        placeholder="Enter Business Name" value = {{bus_prof.city}} 
+                                        readonly/>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="zip" class="form-label">Zip Code</label>
                                     <input type="text" class="form-control" id="fullName" placeholder="Enter Zip Code"
-                                        name="zip" />
+                                        name="zip" value = "{{bus_prof.zip}}" readonly/>
                                 </div>
                                 {% comment %} <div class="col-md-4">
                                     <label for="inputPassword4" class="form-label">Shop Address Proof</label>
@@ -328,11 +335,11 @@
                                         creation. Also i have read and understood all the terms &
                                         conditions and privacy policy.</label>
                                 </div> {% endcomment %}
-                                <div class="col-12 d-flex justify-content-center">
+                                {% comment %} <div class="col-12 d-flex justify-content-center">
                                     <button type="submit" class="btn btn-success">
                                         Save & Submit
                                     </button>
-                                </div>
+                                </div> {% endcomment %}
                             </form>
                         </div>
                     </div>

@@ -109,7 +109,7 @@
           
             class="row g-5"
             method="POST"
-            
+            enctype="multipart/form-data"
           >
           {% csrf_token %}
             <h2>Personal Details</h2>
@@ -127,12 +127,13 @@
               <label for="email" class="form-label">email</label>
               <input type="email" class="form-control" id="email" name = "email"/>
             </div>
-            {% comment %} <div class="col-md-4">
-              <label for="inputPassword4" class="form-label"
+            <div class="col-md-4">
+              <label for="prof_img" class="form-label"
                 >Upload Image*</label
               >
-              <input type="file" class="form-control" id="inputPassword4" />
-            </div> {% endcomment %}
+              <input type="file" class="form-control" id="inputPassword4" 
+              name = 'prof_img'/>
+            </div>
             <div class="col-md-4">
               <label for="contact" class="form-label">Primary Contact</label>
               <input
@@ -153,12 +154,12 @@
                 name="alt_cont"  
               />
             </div>
-            {% comment %} <div class="col-md-4">
-              <label for="inputPassword4" class="form-label"
-                >Upload Image*</label
+            <div class="col-md-4">
+              <label for="id_prof" class="form-label"
+                >Upload Id prof*</label
               >
-              <input type="file" class="form-control" id="inputPassword4" />
-            </div> {% endcomment %}
+              <input type="file" class="form-control" id="inputPassword4" name = 'id_prof'/>
+            </div>
             <div class="col-md-4">
               <label for="address" class="form-label">Address Line</label>
               <input
@@ -171,15 +172,16 @@
             </div>
             <div class="col-md-4">
               <label for="state" class="form-label">State</label>
-              <select name="state" class="form-select" id="">
-                <option value="">select state</option>
-              </select>
+              <input type="hidden" name="country" id="countryId" value="IN"/>
+<select name="state" class="states order-alpha" id="stateId">
+    <option value="">Select State</option>
+</select>
             </div>
             <div class="col-md-4">
               <label for="city" class="form-label">City</label>
-              <select  name = 'city' class="form-select" id="">
-                <option value="">select city</option>
-              </select>
+              <select name="city" class="cities order-alpha" id="cityId">
+                <option value="">Select City</option>
+            </select>
             </div>
             <div class="col-md-4">
               <label for="landmark" class="form-label">Land Mark</label>
@@ -322,3 +324,6 @@
 
 
 {% comment %} {% endblock content %} {% endcomment %}
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+<script src="//geodata.solutions/includes/statecity.js"></script>

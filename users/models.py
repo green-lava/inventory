@@ -9,11 +9,13 @@ class User(AbstractUser):
     is_admin = models.BooleanField(default=False)
     is_supplier = models.BooleanField(default=False)
     is_buyer = models.BooleanField(default=False)
-    is_profile = models.BooleanField(default=False)
+    is_verified = models.BooleanField(default=False)
     
 class Profile(models.Model):
     
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    prof_img = models.ImageField(upload_to='images/', null=True, blank=True)
+    id_prof =  models.ImageField(upload_to='images/', null=True, blank=True)
     name = models.CharField(max_length=50, null=True, blank=True)
     email = models.CharField(max_length=50, null=True, blank=True)
     state = models.CharField(max_length=50, null=True, blank=True)
@@ -42,14 +44,14 @@ class Bus_profile(models.Model):
     state = models.CharField(max_length=50, null=True, blank=True)
     city = models.CharField(max_length=50, null=True, blank=True)
     zip = models.CharField(max_length=50, null=True, blank=True)
-    # specialization = models.CharField(max_length=50, null=True, blank=True)
-    # shop_image = models.ImageField(upload_to='uploads/', null=True, blank=True)
-    # inc_cert = models.FileField(upload_to='uploads/', null=True, blank=True) 
-    # gst_cert = models.FileField(upload_to='uploads/', null=True, blank=True)
-    # other_doc = models.FileField(upload_to='uploads/', null=True, blank=True)
-    # shop_add_proof = models.FileField(upload_to='uploads/', null=True, blank=True)
-    # vendor_of = models.CharField(max_length=50,null=True, blank=True)
-    # bus_card = models.FileField(upload_to='uploads/', null=True, blank=True)
+    specialization = models.CharField(max_length=50, null=True, blank=True)
+    shop_image = models.ImageField(upload_to='uploads/', null=True, blank=True)
+    inc_cert = models.FileField(upload_to='uploads/', null=True, blank=True) 
+    gst_cert = models.FileField(upload_to='uploads/', null=True, blank=True)
+    other_doc = models.FileField(upload_to='uploads/', null=True, blank=True)
+    shop_add_proof = models.FileField(upload_to='uploads/', null=True, blank=True)
+    vendor_of = models.CharField(max_length=50,null=True, blank=True)
+    bus_card = models.FileField(upload_to='uploads/', null=True, blank=True)
     
     def __str__(self):
         return self.shop_name or ''

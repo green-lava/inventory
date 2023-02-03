@@ -120,3 +120,7 @@ media/images/
 
 # ignored virtual environment
 /venv
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid

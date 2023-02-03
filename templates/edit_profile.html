@@ -19,7 +19,7 @@
 </head>
 
 <body>
-  <div class="sidebar">
+  <div class="sidebar active">
     <div class="logo_content">
       <div class="logo">
         <div class="logo_name">
@@ -35,7 +35,7 @@
         <!-- <span class="tooltip">Search</span> -->
       </li>
       <li>
-        <a href="vendorcrm.html">
+        <a href="/store/dashboard">
           <img src="{% static 'assets/images/icons/ic_round-home.svg'%}" height="30" alt="" />
           <span class="links_name">Dashboard</span>
         </a>
@@ -63,7 +63,7 @@
         <!-- <span class="tooltip">Leads</span> -->
       </li>
       <li>
-        <a href="inventry.html" class="selected">
+        <a href="/store/product-list" >
           <img src="{% static 'assets/images/icons/Frame (4).svg'%}" height="30" alt="" class="imgselected" />
           <span class="links_name">Inventory</span>
         </a>
@@ -105,15 +105,15 @@
               <ul class="navbar-nav">
                 <li class="nav-item">
                   <a class="nav-link active nav-text text-decoration-none" aria-current="page" href="#" id="profilebtn">
-                    <span class="text-dark nav_heading"> Vendor Name </span>
+                    <span class="text-dark nav_heading"> {{request.user.username}} </span>
                     <img src="{% static 'assets/images/icons/drop_down_ic.svg'%}" height="20" alt="" />
                   </a>
                   <div class="profile_popup">
                     <div class="profile_name">
                       <img src="{% static 'assets/images/Ellipse 21.svg'%}" height="80" alt="" />
                       <div>
-                        <p class="p-0 m-0 username">Vendor Name</p>
-                        <span class="useremail">vendor@autoz.com</span>
+                        <p class="p-0 m-0 username">{{request.user.username}}</p>
+                        <span class="useremail">{{bus_prof.shop_name}}</span>
                       </div>
                     </div>
                     <div class="profile_actions">
