@@ -87,8 +87,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'HOST': 'inventory.cp7upvh63eo9.ap-south-1.rds.amazonaws.com',
         'PORT': '5432',
-        'NAME': 'inventory',
-        'USER': 'inventory',
+        'NAME': 'inventory1',
+        'USER': 'postgres',
         'PASSWORD': 'Autoz123Inventory',
     }
 }
