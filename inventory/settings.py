@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     # local
     'store.apps.StoreConfig',
     'users.apps.UsersConfig',
-    'phone_field'
 ]
 
 MIDDLEWARE = [
